@@ -30,9 +30,6 @@ export class GeminiProvider extends Provider {
 		this.lastImageModel =
 			settings.aiAdapterSettings.geminiSettings.lastImageModel;
 		GeminiProvider.restartSession();
-		this.checkGemini().then((success) => {
-			debugLog(context, "Gemini check success: " + success);
-		});
 	}
 
 	generateSettings(containerEl: HTMLElement, plugin: AIImageAnalyzerPlugin) {
@@ -187,10 +184,7 @@ export class GeminiProvider extends Provider {
 						? e
 						: JSON.stringify(e);
 			debugLog(context, errMsg);
-			new Notice(
-				"Error connecting to Gemini API. Please check your Gemini API key.",
-			);
-			new Notice(errMsg);
+			debugLog(context, "Gemini connection failed: " + errMsg);
 			return false;
 		}
 	}

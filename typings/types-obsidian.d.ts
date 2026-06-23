@@ -5,3 +5,8 @@ declare module "obsidian" {
 		setSubmenu(): Menu;
 	}
 }
+
+// Global Obsidian app reference
+declare global {
+	const app: any;
+}

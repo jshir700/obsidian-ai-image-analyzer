@@ -1,9 +1,9 @@
 {
 	"id": "ai-image-analyzer",
 	"name": "AI image analyzer",
-	"version": "1.2.2",
+	"version": "1.3.0",
 	"minAppVersion": "0.15.0",
-	"description": "Analyze images with AI to get keywords of the image.",
+	"description": "Analyze images with AI to get keywords of the image. Supports Ollama, Gemini, Agnes, and OpenAI Compatible providers.",
 	"author": "Swaggeroo",
 	"authorUrl": "https://swaggeroo.de",
 	"isDesktopOnly": true

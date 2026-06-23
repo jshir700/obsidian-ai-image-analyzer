@@ -37,9 +37,6 @@ export class OllamaProvider extends Provider {
 		this.lastImageModel =
 			settings.aiAdapterSettings.ollamaSettings.lastImageModel;
 		OllamaProvider.refreshInstance();
-		this.checkOllama().then((success) => {
-			debugLog(context, "Ollama check success: " + success);
-		});
 	}
 
 	generateSettings(containerEl: HTMLElement, plugin: AIImageAnalyzerPlugin) {
@@ -242,8 +239,7 @@ export class OllamaProvider extends Provider {
 				OllamaProvider.refreshInstance();
 				return await this.checkOllama();
 			}
-			new Notice("Error connecting to ollama.");
-			new Notice(errMsg);
+			debugLog(context, "Ollama connection failed: " + errMsg);
 			return false;
 		}
 	}
